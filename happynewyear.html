@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Countdown</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: blueviolet;
+            text-align: center;
+        }
+        
+        h1 {
+            color: white;
+            margin-inline: 9px;
+            font-size: 120px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        .subganti {
+            color: white;
+            font-size: 120px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-bottom: -30px;
+            margin-top: -15px;
+        }
+        
+        #countdown {
+            font-size: 30px;
+            color: blueviolet;
+            top: 35vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: -20px;
+            animation: none;
+        }
+        
+        @keyframes zz {
+            0% {
+                transform: scale(100%);
+            }
+            95%,
+            100% {
+                transform: scale(120%);
+            }
+        }
+        
+        .countdown-part {
+            display: flex;
+            margin: 0 10px;
+            padding: 10px;
+            justify-content: center;
+            margin-bottom: -16px;
+        }
+        
+        .year {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .sqd {
+            width: 75px;
+            height: 75px;
+            border: 0px none;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            margin-inline: 15px;
+            background-color: white;
+        }
+        
+        .sqh {
+            width: 75px;
+            height: 75px;
+            border: 0px none;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            margin-inline: 15px;
+            background-color: white;
+        }
+        
+        .sqm {
+            width: 75px;
+            height: 75px;
+            border: 0px none;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            margin-inline: 15px;
+            background-color: white;
+        }
+        
+        .sqs {
+            width: 75px;
+            height: 75px;
+            border: 0px none;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            margin-inline: 15px;
+            background-color: white;
+        }
+        
+        label {
+            color: blueviolet;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .sqganti {
+            width: 90px;
+            height: 105px;
+            background-color: blueviolet;
+            overflow: hidden;
+        }
+        
+        .ganti {
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            animation: none;
+        }
+        
+        @keyframes nye {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-43%);
+            }
+        }
+        
+        .pos {
+            justify-content: center;
+            display: flex;
+            margin-block: 30px;
+        }
+        
+        .sqpesan {
+            width: 390px;
+            height: 180px;
+            background-color: white;
+            opacity: 40%;
+        }
+        
+        .sqpesan:hover {
+            opacity: 100%;
+        }
+        
+        input[name="nama"] {
+            border: 0px none;
+            background-color: #d3d3d3;
+            width: 296px;
+            height: 30px;
+            border-radius: 7px;
+            color: black;
+            font-size: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        
+        input[name="submit"] {
+            border: 0px none;
+            background-color: blueviolet;
+            width: 300px;
+            height: 33px;
+            border-radius: 7px;
+            color: white;
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        input[name="submit"]:hover {
+            background-color: white;
+            border: 2px solid blueviolet;
+            color: blueviolet;
+        }
+        
+        .kalimat {
+            justify-content: center;
+            display: none;
+            font-size: 25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            margin-top: 80px;
+            margin-bottom: -80px;
+            letter-spacing: 6px;
+            animation: nyekal 2s infinite;
+        }
+        
+        @keyframes nyekal {
+            0%,
+            100% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kalimat" id="kalimat">HAPPY NEW YEAR!!!</div>
+    <div class="year">
+        <h1>2</h1>
+        <h1>0</h1>
+        <h1>2</h1>
+        <div class="sqganti">
+            <div class="ganti" id="ganti">
+                <div class="subganti">3</div>
+                <div class="subganti">4</div>
+            </div>
+        </div>
+    </div>
+    <div class="countdown" id="countdown">
+        <div class="sqd" id="sqd">
+            <div class="countdown-part" id="days"></div>
+            <label>hari</label>
+        </div>
+        <div class="sqh" id="sqh">
+            <div class="countdown-part" id="hours"></div>
+            <label>jam</label>
+        </div>
+        <div class="sqm" id="sqm">
+            <div class="countdown-part" id="minutes"></div>
+            <label>menit</label>
+        </div>
+        <div class="sqs" id="sqs">
+            <div class="countdown-part" id="seconds"></div>
+            <label id="label">detik</label>
+        </div>
+    </div>
+    <div class="pos" id="pos">
+        <div class="sqpesan">
+            <div class="isi-pesan">
+                <h5>apakah ada pesan untuk anda? isi nama lengkap disini <br> (semua huruf kecil / lowercase)</h5>
+                <input type="text" name="nama" id="nama" placeholder="nama lengkap . .">
+                <input type="submit" name="submit" id="submit" value="submit">
+            </div>
+        </div>
+    </div>
+    <input type="submit" id="test" value="test" onclick="test()">
+    <script>
+        var countDownDate = new Date(new Date().getFullYear() + 1, 0, 1, 0, 0, 0).getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+            if (distance < 301000) {
+                document.getElementById('ganti').style.animation = 'nye 300s linear forwards';
+            }
+            if (distance < 61000) {
+                document.getElementById('sqd').style.display = 'none';
+                document.getElementById('sqh').style.display = 'none';
+                document.getElementById('sqm').style.display = 'none';
+                document.getElementById('label').style.display = 'none';
+                document.getElementById('pos').style.display = 'none';
+                document.getElementById('sqs').style.backgroundColor = 'transparent';
+                document.getElementById('countdown').style.color = 'white';
+                document.getElementById('countdown').style.fontSize = '200px';
+                document.getElementById('countdown').style.animation = 'zz 1s ease infinite';
+            }
+            if (distance < 11000) {
+                document.getElementById('countdown').style.color = 'red';
+            }
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('countdown').style.display = 'none';
+                document.getElementById('kalimat').style.display = 'flex';
+            }
+        }, 1000);
+
+        function test() {
+
+        }
+    </script>
+
+</body>
+
+</html>
