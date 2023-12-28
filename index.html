@@ -255,15 +255,9 @@
             <div class="isi-pesan">
                 <h5>apakah ada pesan untuk anda? isi nama lengkap disini <br> (semua huruf kecil / lowercase)</h5>
                 <input type="text" name="nama" id="nama" placeholder="nama lengkap . .">
-                <input type="submit" name="submit" id="submit" value="submit">
+                <input type="submit" name="submit" id="submit" value="submit" onclick="pesan()">
             </div>
         </div>
-    </div>
-    <div class="tes">
-        <input type="submit" id="test" value="test" onclick="test()">
-        <input type="submit" id="test" value="test" onclick="testt()">
-        <input type="submit" id="test" value="test" onclick="testtt()">
-        <input type="submit" id="test" value="test" onclick="testttt()">
     </div>
     <script>
         var countDownDate = new Date(new Date().getFullYear() + 1, 0, 1, 0, 0, 0).getTime();
@@ -302,29 +296,58 @@
             }
         }, 1000);
 
-        function test() {
-            document.getElementById('ganti').style.animation = 'nye 300s linear forwards';
-        }
-
-        function testt() {
-            document.getElementById('sqd').style.display = 'none';
-            document.getElementById('sqh').style.display = 'none';
-            document.getElementById('sqm').style.display = 'none';
-            document.getElementById('label').style.display = 'none';
-            document.getElementById('pos').style.display = 'none';
-            document.getElementById('sqs').style.backgroundColor = 'transparent';
-            document.getElementById('countdown').style.color = 'white';
-            document.getElementById('countdown').style.fontSize = '200px';
-            document.getElementById('countdown').style.animation = 'zz 1s ease infinite';
-        }
-
-        function testtt() {
-            document.getElementById('countdown').style.color = 'red';
-        }
-
-        function testttt() {
-            document.getElementById('countdown').style.display = 'none';
-            document.getElementById('kalimat').style.display = 'flex';
+        function pesan() {
+            var kepada = document.getElementById('nama').value;
+            var list = ['winda sari putri', 'fanny fatti rahmah', 'arima novianti', 'desi riana saputri', 'wildalika ayu Mahira', 'febrian nugroho wisnu santoso', 'esther juneline laia', 'sukma yuliandra putri', 'faizah khairunnisa', 'ida rismawati', 'nadia refiyanah', 'rosa alicia manik', 'fitri safira', 'lucianda dwi mutia', 'melsi oktaviana'];
+            if (kepada !== '') {
+                if (kepada == 'winda sari putri') {
+                    window.location.href = 'winda.html';
+                }
+                if (kepada == 'fanny fatti rahmah') {
+                    window.location.href = 'fanny.html';
+                }
+                if (kepada == 'arima novianti') {
+                    window.location.href = 'arima.html';
+                }
+                if (kepada == 'desi riana saputri') {
+                    window.location.href = 'desi.html';
+                }
+                if (kepada == 'wildalika ayu mahira') {
+                    window.location.href = 'wildalika.html';
+                }
+                if (kepada == 'febrian nugroho wisnu santoso') {
+                    window.location.href = 'febrian.html';
+                }
+                if (kepada == 'esther juneline laia') {
+                    window.location.href = 'esther.html';
+                }
+                if (kepada == 'sukma yuliandra putri') {
+                    window.location.href = 'sukma.html';
+                }
+                if (kepada == 'faizah khairunnisa') {
+                    window.location.href = 'faizah.html';
+                }
+                if (kepada == 'ida rismawati') {
+                    window.location.href = 'ida.html';
+                }
+                if (kepada == 'nadya refiyanah') {
+                    window.location.href = 'nadya.html';
+                }
+                if (kepada == 'rosa alicia manik') {
+                    window.location.href = 'rosa.html';
+                }
+                if (kepada == 'lucianda dwi mutia') {
+                    window.location.href = 'lucianda.html';
+                }
+                if (kepada == 'melsi oktaviana') {
+                    window.location.href = 'melsi.html';
+                }
+                if (list.indexOf(kepada) == -1) {
+                    window.location.href = 'random.html';
+                }
+            } else {
+                window.location.href = 'index.html';
+            }
         }
     </script>
 
