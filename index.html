@@ -19,12 +19,18 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         
-        .subganti {
+        .subganti1 {
             color: white;
             font-size: 120px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            margin-bottom: -30px;
-            margin-top: -15px;
+            margin-top: -97px;
+        }
+        
+        .subganti2 {
+            color: white;
+            font-size: 120px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: -120px;
         }
         
         #countdown {
@@ -128,7 +134,7 @@
                 transform: translateY(0);
             }
             100% {
-                transform: translateY(-43%);
+                transform: translateY(-41%);
             }
         }
         
@@ -199,6 +205,13 @@
                 transform: scale(100%);
             }
         }
+        
+        .tes {
+            display: flex;
+            bottom: 0px;
+            justify-content: center;
+            position: fixed;
+        }
     </style>
 </head>
 
@@ -210,8 +223,12 @@
         <h1>2</h1>
         <div class="sqganti">
             <div class="ganti" id="ganti">
-                <div class="subganti">3</div>
-                <div class="subganti">4</div>
+                <div class="subganti1">
+                    <h1>3</h1>
+                </div>
+                <div class="subganti2">
+                    <h1>4</h1>
+                </div>
             </div>
         </div>
     </div>
@@ -242,7 +259,12 @@
             </div>
         </div>
     </div>
-    <input type="submit" id="test" value="test" onclick="test()">
+    <div class="tes">
+        <input type="submit" id="test" value="test" onclick="test()">
+        <input type="submit" id="test" value="test" onclick="testt()">
+        <input type="submit" id="test" value="test" onclick="testtt()">
+        <input type="submit" id="test" value="test" onclick="testttt()">
+    </div>
     <script>
         var countDownDate = new Date(new Date().getFullYear() + 1, 0, 1, 0, 0, 0).getTime();
         var x = setInterval(function() {
@@ -281,7 +303,28 @@
         }, 1000);
 
         function test() {
+            document.getElementById('ganti').style.animation = 'nye 300s linear forwards';
+        }
 
+        function testt() {
+            document.getElementById('sqd').style.display = 'none';
+            document.getElementById('sqh').style.display = 'none';
+            document.getElementById('sqm').style.display = 'none';
+            document.getElementById('label').style.display = 'none';
+            document.getElementById('pos').style.display = 'none';
+            document.getElementById('sqs').style.backgroundColor = 'transparent';
+            document.getElementById('countdown').style.color = 'white';
+            document.getElementById('countdown').style.fontSize = '200px';
+            document.getElementById('countdown').style.animation = 'zz 1s ease infinite';
+        }
+
+        function testtt() {
+            document.getElementById('countdown').style.color = 'red';
+        }
+
+        function testttt() {
+            document.getElementById('countdown').style.display = 'none';
+            document.getElementById('kalimat').style.display = 'flex';
         }
     </script>
 
