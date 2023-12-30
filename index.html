@@ -212,10 +212,19 @@
             justify-content: center;
             position: fixed;
         }
+        
+        #fireworksCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
+    <canvas id="fireworksCanvas"></canvas>
     <div class="kalimat" id="kalimat">HAPPY NEW YEAR!!!</div>
     <div class="year">
         <h1>2</h1>
@@ -352,6 +361,63 @@
                 window.location.href = 'index.html';
             }
         }
+
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const particles = [];
+
+        function createFirework(x, y) {
+            for (let i = 0; i < 30; i++) {
+                const particle = {
+                    x,
+                    y,
+                    size: Math.random() * 2 + 1,
+                    color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                    speed: {
+                        x: (Math.random() - 0.3) * 8,
+                        y: (Math.random() - 0.3) * 8
+                    },
+                };
+                particles.push(particle);
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                const particle = particles[i];
+
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(particle.x, particle.y, particle.size, particle.size);
+
+                particle.x += particle.speed.x;
+                particle.y += particle.speed.y;
+
+                particle.size -= 0.01;
+
+                if (particle.size <= 0.7) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function triggerFireworks() {
+            setInterval(() => {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                createFirework(x, y);
+            }, 2000);
+        }
+
+        triggerFireworks();
+
+        animate();
     </script>
 
 </body>
